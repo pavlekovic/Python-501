@@ -5,9 +5,9 @@ print("\nQ1a\n")
 
 # A1a:
 user_input = int(input("Enter a number: "))
-list_of_divisors = []
 
 def find_divisors (user_input):
+    list_of_divisors = []
     for i in range(1, user_input+1):
         if user_input % i == 0:
             list_of_divisors.append(i)
@@ -22,8 +22,19 @@ print("\nQ1b\n")
 # (bonus points if you call your previous function within this function
 
 # A1b:
+int_1 = int(input("Enter the first number: "))
+int_2 = int(input("Enter the second number: "))
 
+def is_it_factor (int_1, int_2):
+    divisors_int1 = find_divisors(int_1)
+    divisors_int2 = find_divisors(int_2)
 
+    if int_1 in divisors_int2 or int_2 in divisors_int1:
+        return True
+    else:
+        return False
+
+print(is_it_factor(int_1, int_2))
 
 # -------------------------------------------------------------------------------------- #
 
