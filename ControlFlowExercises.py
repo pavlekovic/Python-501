@@ -3,7 +3,7 @@ print("\nQ1a\n")
 x = [2, 5, 4, 87, 34, 2, 1, 31, 103, 99]
 
 # A1a:
-
+print(x[:5])
 
 
 print("\nQ1b\n")
@@ -11,7 +11,9 @@ print("\nQ1b\n")
 x = [2, 5, 4, 87, 34, 2, 1, 31, 103, 99]
 
 # A1b:
-
+for i in x:
+    if i % 2 == 0:
+        print(i)
 
 
 print("\nQ1c\n")
@@ -19,7 +21,9 @@ print("\nQ1c\n")
 x = [2, 5, 4, 87, 34, 2, 1, 31, 103, 99]
 
 # A1c:
-
+for i in x[:5]:
+    if i % 2 != 0:
+        print(i)
 
 # -------------------------------------------------------------------------------------- #
 
@@ -29,8 +33,11 @@ print("\nQ2a\n")
 names = ["Alan Turing", "Leonardo Fibonacci", "Katherine Johnson", "Annie Easley", "Terence Tao"]
 
 # A2a:
+another_list_letters = []
+for i in names:
+    another_list_letters.append(i[0])
 
-
+print(another_list_letters)
 
 
 print("\nQ2b\n")
@@ -39,8 +46,10 @@ print("\nQ2b\n")
 names = ["Alan Turing", "Leonardo Fibonacci", "Katherine Johnson", "Annie Easley", "Terence Tao"]
 
 # A2b:
-
-
+another_list_indices = []
+for i in names:
+    another_list_indices.append(i.index(' '))
+print(another_list_indices)
 
 
 print("\nQ2c\n")
@@ -48,6 +57,13 @@ print("\nQ2c\n")
 names = ["Alan Turing", "Leonardo Fibonacci", "Katherine Johnson", "Annie Easley", "Terence Tao"]
 
 # A2c:
+first_last = []
+for i in names:
+    f = i[0]
+    l = i[i.index(' ')+1]
+    initial = f + l
+    first_last.append(initial)
+print(first_last)
 
 
 # -------------------------------------------------------------------------------------- #
@@ -60,6 +76,9 @@ list_of_lists = [[1,5,7,3,44,4,1],
                  ["Hi", "Hello", "Ciao", "By", "Goodbye", "Ciao"],
                  ["one", "Two", "Three", "Four"]]
 
+for i in list_of_lists:
+    if (len(set(i)) == len(i)):
+        print(i)
 
 # A3a:
 
@@ -72,12 +91,34 @@ print("\nQ4a\n")
 # they entered
 
 # A4a:
+def find_divisors (user_input):
+    list_of_divisors = []
+    for i in range(1, user_input+1):
+        if user_input % i == 0:
+            list_of_divisors.append(i)
+    return list_of_divisors
+
+while True:
+    try:
+        user_number = int(input("Enter a number greater than 100: "))
+    except ValueError:
+        print("This is not right. Try again.\n")
+        continue
+    if (user_number <= 100):
+        print("This is not right. Try again.\n")
+        continue
+    elif (len(find_divisors(user_number)) <= 2):
+        print("Prime.")
+        break
+    else:
+        print("Not prime")
+        break
 
 
 print("\nQ4b\n")
 # Q4b: Continue this code and print "prime" if the number is a prime number and "not prime" otherwise
 
-# A4b:
+# A4b: Added a function above.
 
 
 
