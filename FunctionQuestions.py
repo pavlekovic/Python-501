@@ -4,7 +4,16 @@ print("\nQ1a\n")
 # hint: range(1, n) returns a collection of the numbers from 1 to n-1
 
 # A1a:
+user_input = int(input("Enter a number: "))
+list_of_divisors = []
 
+def find_divisors (user_input):
+    for i in range(1, user_input+1):
+        if user_input % i == 0:
+            list_of_divisors.append(i)
+    return list_of_divisors
+
+print('f(%d) =' % (user_input), find_divisors(user_input))
 
 
 print("\nQ1b\n")
