@@ -102,10 +102,10 @@ while True:
     try:
         user_number = int(input("Enter a number greater than 100: "))
     except ValueError:
-        print("This is not right. Try again.\n")
+        print("This is not a number. Try again.\n")
         continue
     if (user_number <= 100):
-        print("This is not right. Try again.\n")
+        print("The number you entered is below 100. Try again.\n")
         continue
     elif (len(find_divisors(user_number)) <= 2):
         print("Prime.")

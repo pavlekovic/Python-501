@@ -80,7 +80,7 @@ print("\nQ2c\n")
 # e.g. f("bob") -> 1134 (because bob's id was 1141 and 1+1+4+1 = 7 so 1141 - 7 = 1134)
 
 # A2c:
-def generate_password(id):
+def generate_password (id):
     list_of_digits = list(id)
     sum_digits = 0
     for i in list_of_digits:
@@ -107,7 +107,7 @@ def check_input(message):
             break
 
 def is_prime():
-    if len(find_divisors(user_input_q3)) > 2:
+    if len(find_divisors(user_input_q3)) <= 2:
         return True
     else:
         return False
